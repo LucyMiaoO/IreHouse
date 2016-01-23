@@ -12,6 +12,8 @@ source 'https://rubygems.org'
     gem 'bootstrap-sass','3.2.0.0'
     gem 'bcrypt',   '3.1.7'
     gem "paperclip", "~> 4.3"
+    gem "paperclip-dropbox", ">= 1.1.7"
+    gem "figaro"
 
     group :development, :test do
       gem 'sqlite3',     '1.3.9'
