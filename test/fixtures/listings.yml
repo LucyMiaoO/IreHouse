@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  city: MyString
+  deposit: 9.99
+  description: MyText
+
+two:
+  city: MyString
+  deposit: 9.99
+  description: MyText
