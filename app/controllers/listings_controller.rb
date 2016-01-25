@@ -1,5 +1,7 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :check_user, only: [:edit, :update, :destroy]
 
   def index
     @listings = Listing.all
@@ -58,5 +60,11 @@ class ListingsController < ApplicationController
 
     def listing_params
       params.require(:listing).permit(:city, :deposit, :description, :image)
+    end
+
+    def check_user
+      if current_user != @listing.user
+        redirect_to root_url, alert: "Oops, this house information belongs to someone else."
+      end
     end
 end
