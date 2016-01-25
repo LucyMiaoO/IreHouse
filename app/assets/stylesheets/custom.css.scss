@@ -140,9 +140,34 @@
     }
 
     .jumbotron {
-    background-image: url('https://dl.dropboxusercontent.com/s/n8w9l6s88551dfq/jumbotron.jpg');
+    background-image: url('https://photos-3.dropbox.com/t/2/AADm_gA7heIw1208qwh0QElaQe2CLO7ipNiQNmyShm1JEw/12/528586352/jpeg/32x32/1/_/1/2/Irehouse.jpg/EIvrqp0EGB4gAigC/hhnyl7LbPCvRXGyWL8Q0X8sR0U44Rm_melj-07cDmak?size_mode=5');
     h1, h2 {
-    font-family: guardian-egyptt, georgia, serif;
+    font-family: fantasy;
     }
     }
+
+    .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    display: block;
+    height: 450px;
+    max-width: 100%;
+    line-height: 1;
+    width: 100%;
+    }
+
+    .carousel-caption{
+    h1{
+    font-family: fantasy;
+    font-size: 50px;
+    color:#FFFFFF;
+    }
+    }
+
+    .page-header{
+    
+    font-family: fantasy;
+    font-size: 50px;
+    color: #3071A9;
+    
+    }
+
 
