@@ -1,14 +1,23 @@
 Rails.application.routes.draw do
 
+  
           devise_for :users
-          resources :listings
+          resources :listings do
+            resources :reservations, only:[:new, :create]
+          end
+            
           root 'static_pages#home'
-
-          get 'landlord' => 'listings#landlord'
-
+          
           get 'help'    => 'static_pages#help'
           get 'about'   => 'static_pages#about'
           get 'contact' => 'static_pages#contact'
+
+          get 'landlord' => 'listings#landlord'
+          get 'receipts' => 'reservations#receipts'
+          get 'reserves' => 'reservations#reserves'
+
+
+          
           
 
 

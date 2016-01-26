@@ -1,6 +1,7 @@
 class Listing < ActiveRecord::Base
 
   belongs_to :user
+  has_many :reservations
   
   if Rails.env.development?
     has_attached_file :image, :styles => { :medium => "200x", :thumb => "100x100>" }, :default_url => "default.jpg"
