@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+          devise_for :users
           resources :listings
           root 'static_pages#home'
+
+          get 'landlord' => 'listings#landlord'
 
           get 'help'    => 'static_pages#help'
           get 'about'   => 'static_pages#about'
