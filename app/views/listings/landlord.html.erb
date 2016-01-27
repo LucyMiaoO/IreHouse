@@ -11,7 +11,7 @@
   <tr>
     <th class="center">Image</th>
     <th class="center">City</th>
-    <th class="center">Description</th>
+    <th class="center">Address</th>
     <th class="center">Deposit</th>
     <th class="center">Action</th>
   </tr>
@@ -22,7 +22,7 @@
         <%= image_tag listing.image.url(:thumb) %>
       </td>
       <td class="center"><%= listing.city %></td>
-      <td class="center"><%= listing.description %></td>
+      <td class="center"><%= listing.address %></td>
       <td class="center"><%= listing.deposit %> € </td>
       <td class="center">
         <div class="btn-group">

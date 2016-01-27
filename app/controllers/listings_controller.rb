@@ -63,7 +63,7 @@ class ListingsController < ApplicationController
     end
 
     def listing_params
-      params.require(:listing).permit(:city, :deposit, :description, :image)
+      params.require(:listing).permit(:city, :deposit, :address, :description, :image)
     end
 
     def check_user

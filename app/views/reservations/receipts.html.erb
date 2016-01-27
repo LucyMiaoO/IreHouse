@@ -9,7 +9,7 @@
   <tr>
     <th class="center">Image</th>
     <th class="center">City</th>
-    <th class="center">Description</th>
+    <th class="center">Address</th>
     <th class="center">Deposit</th>
     <th class="center">Lessee</th>
     <th class="center">Date rented</th>
@@ -21,7 +21,7 @@
         <%= image_tag reservation.listing.image.url(:thumb) %>
       </td>
       <td class="center"><%= reservation.listing.city %></td>
-      <td class="center"><%= reservation.listing.description %></td>
+      <td class="center"><%= reservation.listing.Address %></td>
       <td class="center"><%= reservation.listing.deposit %> € </td>
       <td class="center"><%= reservation.student.name %></td>
       <td class="center"><%= reservation.created_at.strftime("%B %-d, %Y") %></td>

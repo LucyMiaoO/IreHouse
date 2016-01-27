@@ -14,7 +14,7 @@ class Listing < ActiveRecord::Base
     validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   end
 
-  validates :city, :description, :deposit, presence: true
+  validates :city, :address, :description, :deposit, presence: true
   validates :deposit, numericality: { greater_than: 0 }
   validates_attachment_presence :image
   

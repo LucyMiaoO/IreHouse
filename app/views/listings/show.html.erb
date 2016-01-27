@@ -7,7 +7,14 @@
   <div class="col-md-6">
     <h3><%= @listing.city %></h3>
     <p>Deposit: <%= @listing.deposit%> € </p>
-    <p><%= @listing.description %></p>
+    <p>Address: <%= @listing.address%></p>
+    <iframe
+        width="500"
+        height="300"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBk0n3HgHsD1_klWfbntFpqcnelHV-9a64&q=<%= @listing.address.parameterize %>&zoom=14">
+    </iframe> 
+    <p>Description: <br> <%= @listing.description %></p>
     <br>
       <% if current_user != @listing.user %>
       <%= link_to " Reserve ", new_listing_reservation_path(@listing), class: "btn btn-primary" %>
