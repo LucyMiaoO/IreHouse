@@ -12,6 +12,10 @@
     <th class="center">Address</th>
     <th class="center">Deposit</th>
     <th class="center">Date rented</th>
+    <th class="center">Tenant</th>
+    <th class="center">Age</th>
+    <th class="center">Nationality</th>
+    <th class="center">Message</th>
   </tr>
 
   <% @reservations.each do |reservation| %>
@@ -22,18 +26,7 @@
       <td class="center"><%= reservation.listing.city %></td>
       <td class="center"><%= reservation.listing.address %></td>
       <td class="center"> € <%= reservation.listing.deposit %></td>
-      <td class="center"><%= reservation.created_at.strftime("%B %-d, %Y") %></td>
-    </tr>
-  <% end %>
-    <tr>
-    <th class="center">Tenant</th>
-    <th class="center">Age</th>
-    <th class="center">Nationality</th>
-    <th class="center">Message</th>
-  </tr>
-
-  <% @reservations.each do |reservation| %>
-    <tr>
+      <td class="center"><%= reservation.created_at.strftime("%B %-d, %Y") %></td>    
       <td class="center"><%= reservation.student.name %></td>
       <td class="center"><%= reservation.age %></td>
       <td class="center"><%= reservation.nationality %></td>
