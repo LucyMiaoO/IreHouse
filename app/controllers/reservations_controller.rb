@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+  
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
@@ -16,9 +17,26 @@ class ReservationsController < ApplicationController
     @reservation.student_id = current_user.id
     @reservation.landlord_id = @landlord.id
 
+    require "stripe"
+    Stripe.api_key = ENV["STRIPE_API_KEY"]
+    token = params[:stripeToken]
+
+    begin
+      charge = Stripe::Charge.create(
+        :amount => (@listing.deposit * 100).floor,
+        :currency => "eur",
+        :source => "tok_17a7PWKDIAbkTx1DciA4kMOc", 
+        :description => "Charge for test@example.com",
+        :card => token
+        )
+      flash[:notice] = "Thanks for reservation!"
+    rescue Stripe::CardError => e
+      flash[:danger] = e.message
+    end
+
     respond_to do |format|
       if @reservation.save
-        format.html { redirect_to listings_path, notice: 'Reservation was successfully created.' }
+        format.html { redirect_to listings_path }
         format.json { render :show, status: :created, location: @reservation }
       else
         format.html { render :new }

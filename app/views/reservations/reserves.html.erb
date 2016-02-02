@@ -22,7 +22,7 @@
       </td>
       <td class="center"><%= reservation.listing.city %></td>
       <td class="center"><%= reservation.listing.address %></td>
-      <td class="center"><%= reservation.listing.deposit %> € </td>
+      <td class="center"> € <%= reservation.listing.deposit %></td>
       <td class="center"><%= reservation.landlord.name %></td>
       <td class="center"><%= reservation.created_at.strftime("%B %-d, %Y") %></td>
     </tr>
