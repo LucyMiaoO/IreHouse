@@ -24,9 +24,7 @@ class ReservationsController < ApplicationController
     begin
       charge = Stripe::Charge.create(
         :amount => (@listing.deposit * 100).floor,
-        :currency => "eur",
-        :source => "tok_17a7PWKDIAbkTx1DciA4kMOc", 
-        :description => "Charge for test@example.com",
+        :currency => "eur", 
         :card => token
         )
       flash[:notice] = "Thanks for reservation!"
