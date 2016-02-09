@@ -6,11 +6,11 @@ Rails.application.routes.draw do
             resources :reservations, only:[:new, :create]
           end
             
-          root 'static_pages#home'
+          root 'listings#index'
           
           get 'help'    => 'static_pages#help'
           get 'about'   => 'static_pages#about'
-          get 'contact' => 'static_pages#contact'
+          get 'home' => 'static_pages#home'
 
           get 'landlord' => 'listings#landlord'
           get 'receipts' => 'reservations#receipts'
