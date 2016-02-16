@@ -9,12 +9,7 @@
       </ul>
     </div>
   <% end %>
-  <div id="stripe_error" class="alert alert-danger" style="display:none">
-    <noscript>JavaScript is not enabled. Please enable it in your web browser settings.</noscript>
-  </div>
 
-<div class="row">
-  <div class="col-md-6">
     <%= form_for @listing, :html => { :multipart => true } do |f| %>
         <div class="form-group">
           <%= f.label :city %><br>
@@ -39,35 +34,5 @@
         <div class="form-group">
           <%= f.submit "Add the House" , class: "btn btn-primary", data: { no_turbolink: true} %>
         </div>
-      </div>
-  <div class="col-md-6">
-      <% if current_user.recipient.blank? %>
-        <h2>Bank Account Information</h2>
+    <% end %>
 
-        <div class="form-group">
-        <div class="row">
-          <div class="col-md-8">
-            <%= label_tag :card_number, "Credit Card Number" %>
-            <%= text_field_tag :card_number, nil, { :name => nil, :'data-stripe' => "number", class: "form-control" } %>
-          </div>
-          <div class="col-md-4">
-            <%= label_tag :card_code, "CVC" %>
-            <%= text_field_tag :card_code, nil, { :name => nil, :'data-stripe' => "cvc", class: "form-control" } %>
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= label_tag nil, "Expiration Date" %>
-        <div class="row">
-          <div class="col-md-3">
-            <%= select_month nil, { use_two_digit_numbers: true }, { :name => nil, :'data-stripe' => "exp-month", class: "form-control" } %>
-          </div>
-          <div class="col-md-3">
-            <%= select_year nil, { start_year: Date.today.year, end_year: Date.today.year+10 }, { :name => nil, :'data-stripe' => "exp-year", class: "form-control" } %>
-          </div>
-        </div>
-      </div>
-        <% end %>
-   </div>
- <% end %>
-</div>
