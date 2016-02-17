@@ -1,21 +1,8 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
-    /* mixins, variables, etc. */
-
-    $gray-medium-light: #eaeaea;
-
-    @mixin box_sizing {
-      -moz-box-sizing:    border-box;
-      -webkit-box-sizing: border-box;
-      box-sizing:         border-box;
-    }
-
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ 
     /* universal */
 
-    body {
-      padding-top: 90px;
-    }
 
     section {
       overflow: auto;
@@ -60,11 +47,22 @@
       line-height: 1.7em;
     }
 
+    /* header */
+
+      .logo {
+        float: left;
+        margin: 10px 0 0 8%;
+        letter-spacing: -1px;
+        font-weight: bold;
+        display: block;
+        color: #3071A9;
+        font-size: 2.0em;
+        
+      }
 
     /* footer */
 
     footer {
-      margin-top: 45px;
       padding-top: 5px;
       border-top: 1px solid #eaeaea;
       color: #777;
@@ -92,15 +90,6 @@
       margin-left: 15px;
     }
 
-    /* miscellaneous */
-
-    .debug_dump {
-      clear: both;
-      float: left;
-      width: 100%;
-      margin-top: 45px;
-      @include box_sizing;
-    }
 
     .col-md-3:nth-child(4n+1) {
       clear: left;
@@ -125,6 +114,8 @@
 
     .jumbotron {
       background-image: url('https://dl.dropboxusercontent.com/s/kk62kgr89b1czx2/Irehouse.jpg?dl=0');
+      size: auto;
+      height: 250px;
       h1, h2 {
       font-family: fantasy;
       }

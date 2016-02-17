@@ -1,56 +1,52 @@
 <% provide(:title, 'Home') %>
 
 
-<div class="carousel slide" id="myCarousel">
- <ol class="carousel-indicators">
-  <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
-  <li data-slide-to="1" data-target="#myCarousel"></li>
-  <li data-slide-to="2" data-target="#myCarousel"></li>
-  <li data-slide-to="3" data-target="#myCarousel"></li>
- </ol>
- <div class="carousel-inner">
- <div class="active item">
-  <%= link_to image_tag("Slide01.jpg", alt: "", size: "500x300") %>
-       <div class="carousel-caption">
-            <h1 class="bold large">  &nbsp&nbsp Hey, how are you today?<br><br>
-       </div>
- </div>
- <div class="item">
-  <%= link_to image_tag("Slide02.jpg", alt: "", size: "500x300") %>
-       <div class="carousel-caption">
-            <h1 class="bold large center">What are you looking for?
-       </div>
- </div>
- <div class="item">
-  <%= link_to image_tag("Slide03.jpg", alt: "", size: "500x300") %>
-       <div class="carousel-caption">
-            <h1 class="bold large center">Here are many lovely houses.<br><br><br><br>
-       </div>
- </div>
- <div class="item">
-  <%= link_to image_tag("Slide04.jpg", alt: "", size: "500x300") %>
-       <div class="carousel-caption">
-            <h1 class="bold large center">Click the link below to rent house in Ireland.
-       </div>
- </div>
- </div>
-<a class="carousel-control left" data-slide="prev" href="#myCarousel"></a>
-<a class="carousel-control right" data-slide="next" href="#myCarousel"></a>
-</div>
+  <div class="carousel slide" id="myCarousel">
+    <ol class="carousel-indicators">
+      <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+      <li data-slide-to="1" data-target="#myCarousel"></li>
+      <li data-slide-to="2" data-target="#myCarousel"></li>
+      <li data-slide-to="3" data-target="#myCarousel"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="active item">
+        <%= link_to image_tag("Slide01.jpg", alt: "", size: "500x300") %>
+             <div class="carousel-caption">
+                  <h1 class="bold large">  &nbsp&nbsp Hey, how are you today?<br><br>
+             </div>
+      </div>
+      <div class="item">
+        <%= link_to image_tag("Slide02.jpg", alt: "", size: "500x300") %>
+             <div class="carousel-caption">
+                  <h1 class="bold large center">What are you looking for?
+             </div>
+      </div>
+      <div class="item">
+        <%= link_to image_tag("Slide03.jpg", alt: "", size: "500x300") %>
+             <div class="carousel-caption">
+                  <h1 class="bold large center">Here are many lovely houses.<br><br><br><br>
+             </div>
+      </div>
+      <div class="item">
+        <%= link_to image_tag("Slide04.jpg", alt: "", size: "500x300") %>
+             <div class="carousel-caption">
+                  <h1 class="bold large center">Click the link below to rent house in Ireland.
+             </div>
+      </div>
+    </div>
+        <a class="carousel-control left" data-slide="prev" href="#myCarousel"></a>
+        <a class="carousel-control right" data-slide="next" href="#myCarousel"></a>
+  </div>
 
-    <div class="container">
-
+    <div class="center">
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
                     Welcome to IreHouse!
-                </h1>
-            
+                </h1> 
             </div>
-            <div class="center">
-
-      <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
-      </div>
+          <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+        </div>
     </div>
-</div>
+
     

@@ -10,18 +10,13 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require_tree .
  *= require_self
  */
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
-
- @import "normalize-rails";
- @import "reset";
- @import "bourbon";
- @import "neat";
- @import "partials/variables";
- @import "partials/mixins";
- @import "partials/layout";
- @import "style";
+ @import "sb-admin-2";
+ @import "metisMenu";
+ @import "metisMenu.min";
  @import "custom";
