@@ -16,6 +16,7 @@ source 'https://rubygems.org'
     gem "figaro"
     gem 'devise'
     gem 'stripe'
+    gem 'rails_admin'
 
     group :development, :test do
       gem 'sqlite3',     '1.3.9'
