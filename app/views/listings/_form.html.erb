@@ -16,8 +16,16 @@
           <%= f.text_field :city, class: "form-control" %>
         </div>
         <div class="form-group">
+          <%= f.label :group %><br>
+          <%= f.collection_select :group_id, Group.all, :id, :name, { prompt: "Select City"}, class: "form-control" %>
+        </div>
+        <div class="form-group">
           <%= f.label :deposit %><br>
           <%= f.text_field :deposit, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :rental %><br>
+          <%= f.text_field :rental, class: "form-control" %>
         </div>
         <div class="form-group">
           <%= f.label :address %><br>

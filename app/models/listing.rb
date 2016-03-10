@@ -1,6 +1,7 @@
 class Listing < ActiveRecord::Base
 
   belongs_to :user
+  belongs_to :group
   has_many :reservations
   
   if Rails.env.development?
@@ -14,8 +15,8 @@ class Listing < ActiveRecord::Base
     validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   end
 
-  validates :city, :address, :description, :deposit, presence: true
-  validates :deposit, numericality: { greater_than: 0 }
+  validates :city, :address, :description, :deposit, :rental, presence: true
+  validates :deposit, :rental, numericality: { greater_than: 0 }
   validates_attachment_presence :image
   
 end

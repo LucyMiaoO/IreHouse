@@ -18,9 +18,21 @@
 
         <% if user_signed_in? %>
             <li>
+              
               <a href="#">Tenant<span class="fa arrow"></span></a>
                   <ul class="nav nav-second-level">
-                    <li><%= link_to "House information", listings_path %></li>
+                    <li>
+                      <a href="#">House Infromation  <span class="badge"><%= Listing.count %></span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+                          <% active = params[:group_id] == nil ? 'active' : '' %>
+                          <% Group.all.each do |group| %>
+                          <% active = params[:group_id].to_i == group.id ? 'active' : '' %>
+                            <li><%= link_to listings_path(group_id: group.id) do %>
+                              <%= group.name %> <span class="badge"><%= group.listings.count %></span>
+                            <% end %></li>
+                          <% end %>
+                        </ul>
+                    </li>
                     <li><%= link_to "Reserve History", reserves_path %></li>
                   </ul>
             </li>
@@ -32,6 +44,8 @@
                     <li><%= link_to "Receipt History", receipts_path %></li>
                   </ul>
             </li>
+
+                      
         <% end %>      
     </ul>
   </div>

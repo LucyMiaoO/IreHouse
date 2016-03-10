@@ -4,7 +4,13 @@ class ListingsController < ApplicationController
   before_filter :check_user, only: [:edit, :update, :destroy]
 
   def index
-    @listings = Listing.all.order("created_at DESC")
+       @listings = Listing.all.order("created_at DESC")
+    if params[:group_id]
+       @group = Group.find(params[:group_id])
+       @listings = @group.listings.paginate(page: params[:page], per_page: 4)
+    else
+       @listings = Listing.paginate(page: params[:page], per_page: 4)
+    end  
   end
 
   def show
@@ -58,12 +64,16 @@ class ListingsController < ApplicationController
 
   private
 
+    def find_listing
+      @listing = Listing.find(params[:id])
+    end
+
     def set_listing
       @listing = Listing.find(params[:id])
     end
 
     def listing_params
-      params.require(:listing).permit(:city, :deposit, :address, :description, :image)
+      params.require(:listing).permit(:city, :deposit,:rental, :address, :description, :image, :group_id)
     end
 
     def check_user

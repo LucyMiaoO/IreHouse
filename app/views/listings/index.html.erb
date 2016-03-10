@@ -12,6 +12,7 @@
           <div class="caption">
             <h3><%= listing.city %></h3>
             <p>Deposit:  € <%= listing.deposit %></p>
+            <p>Rental: € <%= listing.rental %></p>
             <p>Address: <%= listing.address %></p>
           </div>
         </div>
@@ -20,11 +21,7 @@
   </div>
 </div>
 
-<br>
-
-  <% if user_signed_in? %>
-    <%= link_to new_listing_path, class: "btn btn-primary", data: { no_turbolink: true } do %>
-      <i class="fa fa-plus"></i> Add new house
-    <% end %>
-  <% end %>
+  <div class="text-center">
+    <%= will_paginate %>
+  </div>
 

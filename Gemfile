@@ -17,6 +17,8 @@ source 'https://rubygems.org'
     gem 'devise'
     gem 'stripe'
     gem 'rails_admin'
+    gem 'bootstrap-will_paginate', '~> 0.0.10'
+    gem "font-awesome-rails"
 
     group :development, :test do
       gem 'sqlite3',     '1.3.9'
