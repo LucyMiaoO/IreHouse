@@ -13,25 +13,38 @@
       </head>
       <body>
         <div id="wrapper">
-            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-              <%= render 'layouts/header' %>
+              
               <%= render 'layouts/sider' %>
-            </nav>
-          <div id="page-wrapper">
-            <br>
-                <% flash.each do |name, msg| %>
-                  <% if msg.is_a?(String) %>
-                    <div class="alert alert-<%= name.to_s == "notice" ? "success" : "danger" %> alert-dismissable">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+
+              <div id="page-content-wrapper">
+
+                <%= render 'layouts/header' %>
+
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-lg-12">
+                        <br>
+                            <% flash.each do |name, msg| %>
+                              <% if msg.is_a?(String) %>
+                                <div class="alert alert-<%= name.to_s == "notice" ? "success" : "danger" %> alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <%= content_tag :div, msg, :id => "flash_#{name}" %>
+                                </div>
+                              <% end %>
+                            <% end %>
+                          <%= yield %>
+                        <br>
+                        <br>
                     </div>
-                  <% end %>
-                <% end %>
-              <%= yield %>
-            <br>
-            <br>        
-          </div>
-              <%= render 'layouts/footer' %>               
+                  </div>
+                </div>                
+              </div>         
         </div>
+        <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+        </script>
       </body>
     </html>

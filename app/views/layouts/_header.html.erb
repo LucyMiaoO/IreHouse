@@ -1,32 +1,20 @@
-<div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>
-    
-        <div class ="logo">
-        	<%= link_to listings_path do %><i class="fa fa-home">IreHouse</i>
-            <% end %>
-        </div>
-    
-</div>
-        <ul class="nav navbar-top-links navbar-right">
-            <% if user_signed_in? %>
-              <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> Account <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><%= link_to "Settings", edit_user_registration_path %></li>
-                        <li class="divider"></li>
-                        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-                    </ul>           
-              </li>
+        <a href="#menu-toggle" class="btn btn-circle btn-default btn-xs" id="menu-toggle"><i class="glyphicon glyphicon-th-list"></i></a>
+        <div class="navbar-right">
+            <% if user_signed_in? %>          
+                    
+                        <i class="fa fa-user fa-fw"></i>
+                        <%= link_to edit_user_registration_path , class: "btn btn-circle btn-default btn-xs", title: "Settings" do %>
+                            <i class="glyphicon glyphicon-edit"></i>
+                        <% end %>
+                        <%= link_to destroy_user_session_path, method: :delete , class: "btn btn-circle btn-default btn-xs", title: "Sign out" do %>
+                            <i class="glyphicon glyphicon-log-out"></i>
+                        <% end %>    
+                              
             <% else %>
-                <li><%= link_to "Log in", new_user_session_path , class: "btn btn-primary" %></li>
+                        <%= link_to new_user_session_path , class: "btn btn-circle btn-default btn-xs", title: "Log in" do %>
+                            <i class="glyphicon glyphicon-log-in"></i>
+                        <% end %>
             <% end %>
-        </ul>       
+        </div>       
 
 

@@ -2,5 +2,8 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @listing %> |
-<%= link_to 'Back', listings_path %>
+<%= link_to @listing , class: "btn btn-circle btn-default btn-xs", title: "View" do %>
+  <i class="glyphicon glyphicon-eye-open"></i>
+<% end %>
+
+<button class="btn btn-default btn-circle" title="Back" onclick="javascript:history.back(-1);"><i class="glyphicon glyphicon-chevron-left"></i></button>

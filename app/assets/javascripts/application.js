@@ -14,8 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require bootstrap-sprockets
-//= require sb-admin-2
-//= require metisMenu
-//= require dropdown
 //= require_tree .
+
 

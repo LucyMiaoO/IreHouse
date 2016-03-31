@@ -60,36 +60,6 @@
         
       }
 
-    /* footer */
-
-    footer {
-      padding-top: 5px;
-      border-top: 1px solid #eaeaea;
-      color: #777;
-    }
-
-    footer a {
-      color: #555;
-    }
-
-    footer a:hover {
-      color: #222;
-    }
-
-    footer small {
-      float: left;
-    }
-
-    footer ul {
-      float: right;
-      list-style: none;
-    }
-
-    footer ul li {
-      float: left;
-      margin-left: 15px;
-    }
-
 
     .col-md-3:nth-child(4n+1) {
       clear: left;
@@ -113,8 +83,9 @@
     }
 
     .jumbotron {
+      border-radius: 20px;
       background-image: url('https://dl.dropboxusercontent.com/s/kk62kgr89b1czx2/Irehouse.jpg?dl=0');
-      size: auto;
+      background-size: cover;
       height: 250px;
       h1, h2 {
       font-family: fantasy;
@@ -141,6 +112,53 @@
       font-family: fantasy;
       font-size: 50px;
       color: #3071A9;
+    }
+
+    .badge {
+      font-size: 12px;
+      font-weight: bold;
+      color: #68A2D5;
+      background-color: #fff;
+      border-radius: 10px;
+      margin-top: 10px;
+      padding-right: 25px;
+      margin-right: 14px;
+      float:right;
+    }
+
+    .media {
+      padding: 10px 0;
+    }
+
+    .media img, .fileinput .thumbnail, .thumbnail img {
+      border-radius: 10%;
+    }
+
+    .media-left {
+      padding: 0 20px;
+    }
+
+    .media-heading {
+      color: #428bca;
+      margin-bottom: 10px;
+    }
+
+    .media-body {
+      padding-top: 15px;
+    }
+
+    .btn-circle {
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      padding: 6px 0;
+      font-size: 12px;
+      line-height: 1.428571429;
+      border-radius: 15px;
+    }
+
+    .navbar-right {
+      float:right;
     }
 
 
