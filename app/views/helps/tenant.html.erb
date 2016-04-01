@@ -1,0 +1,34 @@
+
+  <% if user_signed_in? %>
+    <%= link_to new_help_path, class: "btn btn-primary", data: { no_turbolink: true } do %>
+      <i class="fa fa-plus"></i> Add new message
+    <% end %>
+  <% end %>
+
+<br>
+<br>
+
+<% @helps.each do |help| %>
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= help.user.name %></h3>
+          <h3 class="button-right">
+              <%= link_to help, class: "btn btn-circle btn-success btn-xs", title: "View" do %>
+                <i class="glyphicon glyphicon-eye-open"></i>
+              <% end %>
+              <%= link_to edit_help_path(help), class: "btn btn-circle btn-info btn-xs", title: "Edit" do %>
+                <i class="glyphicon glyphicon-edit"></i>
+              <% end %>
+              <%= link_to help, method: :delete, class: "btn btn-circle btn-danger btn-xs", title: "Delete", data: { confirm: "Are you sure?" } do %></li>
+                <i class="glyphicon glyphicon-remove"></i>
+              <% end %>
+          </h3>
+    </div>
+    <div class="panel-body">
+        <h4>City: <%= help.city %> | <%= help.title %></h4>
+    </div>
+  </div>  
+<% end %>
+
+
+<br>

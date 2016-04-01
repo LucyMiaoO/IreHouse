@@ -26,9 +26,9 @@
 </div>
 <br>
 <% if current_user == @listing.user %>
-  <%= link_to edit_listing_path(@listing), class: "btn btn-circle btn-default btn-xs", title: "Edit" do %>
+  <%= link_to edit_listing_path(@listing), class: "btn btn-circle btn-info btn-xs", title: "Edit" do %>
     <i class="glyphicon glyphicon-edit"></i>
   <% end %>
 <% end %>
 
-<button class="btn btn-default btn-circle" title="Back" onclick="javascript:history.back(-1);"><i class="glyphicon glyphicon-chevron-left"></i></button>
+<button class="btn btn-primary btn-circle" title="Back" onclick="javascript:history.back(-1);"><i class="glyphicon glyphicon-chevron-left"></i></button>

@@ -29,10 +29,10 @@
         </td>
         <td width="150" class="middle"> 
           <div class="middle">
-              <%= link_to listing, class: "btn btn-circle btn-default btn-xs", title: "View" do %>
+              <%= link_to listing, class: "btn btn-circle btn-success btn-xs", title: "View" do %>
                 <i class="glyphicon glyphicon-eye-open"></i>
               <% end %>
-              <%= link_to edit_listing_path(listing), class: "btn btn-circle btn-default btn-xs", title: "Edit" do %>
+              <%= link_to edit_listing_path(listing), class: "btn btn-circle btn-info btn-xs", title: "Edit" do %>
                 <i class="glyphicon glyphicon-edit"></i>
               <% end %>
               <%= link_to listing, method: :delete, class: "btn btn-circle btn-danger btn-xs", title: "Delete", data: { confirm: "Are you sure?" } do %></li>

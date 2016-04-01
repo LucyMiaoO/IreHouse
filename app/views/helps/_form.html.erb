@@ -1,0 +1,30 @@
+<% if @help.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <h4><%= pluralize(@help.errors.count, "error") %> prohibited this help from being saved:</h4>
+      <ul>
+      <% @help.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_for @help, :html => { :multipart => true } do |f| %>
+
+  <div class="form-group">
+    <%= f.label :title %><br>
+    <%= f.text_field :title , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :city %><br>
+    <%= f.text_field :city , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :message %><br>
+    <%= f.text_area :message , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Submit" , class: "btn btn-primary", data: { no_turbolink: true} %>
+  </div>
+<% end %>

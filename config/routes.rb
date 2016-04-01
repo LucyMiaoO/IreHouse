@@ -1,19 +1,20 @@
 Rails.application.routes.draw do
 
-  
           mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
           
           devise_for :users
+
           resources :listings do
             resources :reservations, only:[:new, :create]
           end
+          resources :helps
             
           root 'listings#index'
           
-          get 'help'    => 'static_pages#help'
           get 'about'   => 'static_pages#about'
           get 'home' => 'static_pages#home'
-
+          
+          get 'tenant' => 'helps#tenant'
           get 'landlord' => 'listings#landlord'
           get 'receipts' => 'reservations#receipts'
           get 'reserves' => 'reservations#reserves'
