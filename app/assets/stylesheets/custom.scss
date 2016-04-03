@@ -3,7 +3,6 @@
  
     /* universal */
 
-
     section {
       overflow: auto;
     }
@@ -197,6 +196,15 @@
 
     .button-right {
       float:right;
+    }
+
+    .huge{
+        font-size: 31px;
+        font-weight: normal;
+        line-height: 67.1429px;
+        text-align: right;
+        word-spacing: 2px;
+        display: block;
     }
 
 

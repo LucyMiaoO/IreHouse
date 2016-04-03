@@ -5,44 +5,49 @@
 <br>
 <br>
 
-<% @reservations.each do |reservation| %>
-<div class="panel panel-info">
-  <div class="panel-heading">
-    <h4>From <%= reservation.student.name %></h4>
-  </div>
-  <div class="panel-body">
-    <p><%= reservation.message %></p>
-  </div>
-  <table class="table table-bordered">  
-  <tr>
-    <th class="center">Image</th>
-    <td class="center">
-        <%= image_tag reservation.listing.image.url(:thumb) %>
-    </td>
-  </tr>
-  <tr>  
-    <th class="center">City</th>
-    <td class="center"><%= reservation.listing.city %></td>
-  </tr> 
-  <tr> 
-    <th class="center">Address</th>
-    <td class="center"><%= reservation.listing.address %></td>
-  </tr>
-  <tr>  
-    <th class="center">Deposit</th>
-    <td class="center"> € <%= reservation.listing.deposit %></td>
-  </tr>
-  <tr>  
-    <th class="center">Date rented</th>
-    <td class="center"><%= reservation.created_at.strftime("%B %-d, %Y") %></td>
-  </tr>
-  <tr>  
-    <th class="center">Age</th>
-    <td class="center"><%= reservation.age %></td>
-  </tr>
-  <tr>  
-    <th class="center">Nationality</th>
-    <td class="center"><%= reservation.nationality %></td>
-</table>
-</div>
+<% if @reservations.blank? %>
+      <h2>No receipts yet. </h2>
+  <% else %>
+    <% @reservations.each do |reservation| %>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h4>From <%= reservation.student.name %></h4>
+      </div>
+      <div class="panel-body">
+        <p><%= reservation.message %></p>
+      </div>
+      <table class="table table-bordered">  
+      <tr>
+        <th class="center">Image</th>
+        <td class="center">
+            <%= image_tag reservation.listing.image.url(:thumb) %>
+        </td>
+      </tr>
+      <tr>  
+        <th class="center">City</th>
+        <td class="center"><%= reservation.listing.city %></td>
+      </tr> 
+      <tr> 
+        <th class="center">Address</th>
+        <td class="center"><%= reservation.listing.address %></td>
+      </tr>
+      <tr>  
+        <th class="center">Deposit</th>
+        <td class="center"> € <%= reservation.listing.deposit %></td>
+      </tr>
+      <tr>  
+        <th class="center">Date rented</th>
+        <td class="center"><%= reservation.created_at.strftime("%B %-d, %Y") %></td>
+      </tr>
+      <tr>  
+        <th class="center">Age</th>
+        <td class="center"><%= reservation.age %></td>
+      </tr>
+      <tr>  
+        <th class="center">Nationality</th>
+        <td class="center"><%= reservation.nationality %></td>
+      </tr>  
+    </table>
+    </div>
+    <% end %>
 <% end %>

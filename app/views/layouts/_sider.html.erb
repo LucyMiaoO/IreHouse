@@ -10,7 +10,7 @@
         <li><%= link_to "Help", helps_path %></li>
 
         <% if user_signed_in? %>
-            <li class="sidebar-brand">Tenant</li>         
+            <li class="sidebar-brand">Houses</li>         
                   <% active = params[:group_id] == nil ? 'active' : '' %>
                   <% Group.all.each do |group| %>
                   <% active = params[:group_id].to_i == group.id ? 'active' : '' %>
@@ -18,14 +18,8 @@
                       <span class="badge"><%= group.listings.count %></span> <%= group.name %> 
                     <% end %></li>
                   <% end %>
-                    <li><%= link_to "My Help", tenant_path %></li>
-                    <li><%= link_to "Reservation", reserves_path %></li>
-
-            <li class="sidebar-brand">Landlord</li>                  
-            <li><%= link_to "My House", landlord_path %></li>
-            <li><%= link_to "Receipt History", receipts_path %></li>
-
-                      
-        <% end %>      
+        <% end %> 
+            <li class="sidebar-brand">Contact</li>                  
+            <li><%= link_to "About", about_path %></li>     
     </ul>
   </div>     

@@ -1,0 +1,49 @@
+<div class = "center">
+  <h1>Your Wishlist</h1>
+</div>
+
+<br>
+<br>
+
+<% if @wishlists.blank? %>
+      <h2>No receipts yet. </h2>
+  <% else %>
+    <% @wishlists.each do |wishlist| %>
+    <div class="panel panel-danger">
+      <div class="panel-heading">
+        <h4>House in <%= wishlist.listing.city %></h4>
+        <div class="star-rating" data-score= <%= wishlist.rate %> ></div>
+      </div>
+      <table class="table table-bordered">  
+      <tr>
+        <th class="center">Image</th>
+        <td class="center">
+            <%= image_tag wishlist.listing.image.url(:thumb) %>
+        </td>
+      </tr>
+      <tr> 
+        <th class="center">Address</th>
+        <td class="center"><%= wishlist.listing.address %></td>
+      </tr>
+      <tr>  
+        <th class="center">Deposit</th>
+        <td class="center"> € <%= wishlist.listing.deposit %></td>
+      </tr>
+      <tr>  
+        <th class="center">Date wanted</th>
+        <td class="center"><%= wishlist.created_at.strftime("%B %-d, %Y") %></td>
+      </tr>
+    </table>
+    </div>
+    <% end %>
+<% end %>
+
+<script>
+  $('.star-rating').raty({
+    path: 'https://s3.amazonaws.com/yelpdemo/stars',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+</script>

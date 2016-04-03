@@ -1,0 +1,32 @@
+<%= form_for([@listing, @wishlist]) do |f| %>
+  <% if @wishlist.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <h4><%= pluralize(@wishlist.errors.count, "error") %> prohibited this wishlist from being saved:</h4>
+
+      <ul>
+      <% @wishlist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-3 col-md-offset-5">
+      <div id="star-rating"></div>
+      <br>
+      <div class="form-group">
+        <%= f.submit "Add to wishlist", class: "btn btn-info"%>
+      </div>
+    </div>
+  </div>    
+<% end %>
+
+<script>
+  $('#star-rating').raty({
+    path: 'https://s3.amazonaws.com/yelpdemo/stars',
+    scoreName: 'wishlist[rate]'
+  });
+</script>

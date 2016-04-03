@@ -6,42 +6,48 @@
 
   <br>
   <br>
-<div class="panel panel-default">
-  <table class="table">
 
+  <% if @listings.blank? %>
+        <h3>We don't have your house information.</h3>
+    <% else %>
     <% @listings.each do |listing| %>
-      <tr>
-        <td class="middle">
-          <div class="media">
-            <div class="media-left">
-              <%= image_tag listing.image.url(:thumb) %>
-            </div>
-          </td>
-          <td>
-            <div class="media-body">
-              <h4 class="media-heading"><%= listing.city %></h4>
-              <address>
-                <strong><%= listing.address %></strong><br>
-                <strong> € <%= listing.deposit %></strong><br>
-              </address>
-            </div>
-          </div>  
-        </td>
-        <td width="150" class="middle"> 
-          <div class="middle">
-              <%= link_to listing, class: "btn btn-circle btn-success btn-xs", title: "View" do %>
-                <i class="glyphicon glyphicon-eye-open"></i>
-              <% end %>
-              <%= link_to edit_listing_path(listing), class: "btn btn-circle btn-info btn-xs", title: "Edit" do %>
-                <i class="glyphicon glyphicon-edit"></i>
-              <% end %>
-              <%= link_to listing, method: :delete, class: "btn btn-circle btn-danger btn-xs", title: "Delete", data: { confirm: "Are you sure?" } do %></li>
-                <i class="glyphicon glyphicon-remove"></i>
-              <% end %>
-          </div>
-        </td>
-      </tr>
+      <div class="panel panel-info">
+        <table class="table">
+            <tr>
+                <td width="150" class="middle">
+                  <div class="media">
+                    <div class="media-left">
+                      <%= image_tag listing.image.url(:thumb) %>
+                    </div>
+                  </div>  
+                </td>
+                <td>
+                  <div class="media">
+                    <div class="media-body">
+                      <h4 class="media-heading"><%= listing.city %></h4>
+                      <address>
+                        <strong><%= listing.address %></strong><br>
+                        <strong> € <%= listing.deposit %></strong><br>
+                      </address>
+                    </div>
+                  </div>  
+                </td>
+                <td width="150">
+                  <h3 class="button-rignt"> 
+                        <%= link_to listing, class: "btn btn-circle btn-success btn-xs", title: "View" do %>
+                          <i class="glyphicon glyphicon-eye-open"></i>
+                        <% end %>
+                        <%= link_to edit_listing_path(listing), class: "btn btn-circle btn-info btn-xs", title: "Edit" do %>
+                          <i class="glyphicon glyphicon-edit"></i>
+                        <% end %>
+                        <%= link_to listing, method: :delete, class: "btn btn-circle btn-danger btn-xs", title: "Delete", data: { confirm: "Are you sure?" } do %></li>
+                          <i class="glyphicon glyphicon-remove"></i>
+                        <% end %>
+                    </h3>
+                </td>
+            </tr>
+        </table>
+      </div>
     <% end %>
-  </table>
-</div>
+  <% end %>    
 

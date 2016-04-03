@@ -4,33 +4,38 @@
 
 <br>
 <br>
-<% @reservations.each do |reservation| %>
-<div class="panel panel-info">
-  <div class="panel-heading">
-    <h4>House in <%= reservation.listing.city %></h4>
-  </div>  
-<table class="table table-bordered"> 
-  <tr>
-    <th class="center">Image</th>
-    <td class="center">
-        <%= image_tag reservation.listing.image.url(:thumb) %>
-    </td>
-  </tr>
-  <tr>  
-    <th class="center">Address</th>
-    <td class="center"><%= reservation.listing.address %></td>
-  </tr>
-  <tr>  
-    <th class="center">Deposit</th>
-    <td class="center"> € <%= reservation.listing.deposit %></td>
-  </tr>
-  <tr>  
-    <th class="center">Landlord</th>
-    <td class="center"><%= reservation.landlord.name %></td>
-  <tr>  
-    <th class="center">Date rented</th>
-    <td class="center"><%= reservation.created_at.strftime("%B %-d, %Y") %></td>
-  </tr>  
-</table>
-</div>
-<% end %>
+
+<% if @reservations.blank? %>
+      <h2>No reservations yet. Go to the homepage and have a look!</h2>
+  <% else %>
+    <% @reservations.each do |reservation| %>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h4>House in <%= reservation.listing.city %></h4>
+      </div>  
+    <table class="table table-bordered"> 
+      <tr>
+        <th class="center">Image</th>
+        <td class="center">
+            <%= image_tag reservation.listing.image.url(:thumb) %>
+        </td>
+      </tr>
+      <tr>  
+        <th class="center">Address</th>
+        <td class="center"><%= reservation.listing.address %></td>
+      </tr>
+      <tr>  
+        <th class="center">Deposit</th>
+        <td class="center"> € <%= reservation.listing.deposit %></td>
+      </tr>
+      <tr>  
+        <th class="center">Landlord</th>
+        <td class="center"><%= reservation.landlord.name %></td>
+      <tr>  
+        <th class="center">Date rented</th>
+        <td class="center"><%= reservation.created_at.strftime("%B %-d, %Y") %></td>
+      </tr>  
+    </table>
+    </div>
+    <% end %>
+<% end %>    

@@ -3,22 +3,26 @@
   <h2>If you have one house, you can help.</h2>
 </div>
 
-<% @helps.each do |help| %>
-  <div class="panel panel-success">
-    <div class="panel-heading">
-      <h3 class="panel-title"><%= help.user.name %></h3>
-          <h3 class="button-right">
-              <%= link_to help, class: "btn btn-circle btn-success btn-xs", title: "View" do %>
-                <i class="glyphicon glyphicon-eye-open"></i>
-              <% end %>
-          </h3>
-    </div>
-    <div class="panel-body">
-        <h4>City: <%= help.city %> | <%= help.title %></h4>
-    </div>
-  </div>  
-<% end %>
+<% if @helps.blank? %>
+      <h2>No messages yet. Be the first to write one!</h2>
+  <% else %>
 
+    <% @helps.each do |help| %>
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= help.user.name %></h3>
+              <h3 class="button-right">
+                  <%= link_to help, class: "btn btn-circle btn-success btn-xs", title: "View" do %>
+                    <i class="glyphicon glyphicon-eye-open"></i>
+                  <% end %>
+              </h3>
+        </div>
+        <div class="panel-body">
+            <h4>City: <%= help.city %> | <%= help.title %></h4>
+        </div>
+      </div>  
+    <% end %>
+<% end %>
 
 <br>
 

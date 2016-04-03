@@ -3,8 +3,9 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :listings, dependent: :destroy
   has_many :helps, dependent: :destroy
-  has_many :receipts, class_name: "Reservation", foreign_key: "landlord_id"
-  has_many :reserves, class_name: "Reservation", foreign_key: "student_id"
+  has_many :receipts, class_name: "Reservation", foreign_key: "landlord_id", dependent: :destroy
+  has_many :reserves, class_name: "Reservation", foreign_key: "student_id", dependent: :destroy
+  has_many :wishlists, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

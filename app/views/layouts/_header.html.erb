@@ -1,10 +1,11 @@
         <a href="#menu-toggle" class="btn btn-circle btn-primary btn-xs" id="menu-toggle"><i class="glyphicon glyphicon-th-list"></i></a>
         <div class="navbar-right">
             <% if user_signed_in? %>          
-                    
-                        <i class="fa fa-user fa-fw"></i>
+                        <%= link_to homepage_path , class: "btn btn-circle btn-default btn-xs", title: "Homepage" do %>
+                            <i class="fa fa-user fa-fw"></i>
+                        <% end %>
                         <%= link_to edit_user_registration_path , class: "btn btn-circle btn-info btn-xs", title: "Settings" do %>
-                            <i class="glyphicon glyphicon-edit"></i>
+                            <i class="fa fa-cogs fa-fw"></i>
                         <% end %>
                         <%= link_to destroy_user_session_path, method: :delete , class: "btn btn-circle btn-warning btn-xs", title: "Sign out" do %>
                             <i class="glyphicon glyphicon-log-out"></i>
