@@ -1,0 +1,21 @@
+<% if @helper.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <h4><%= pluralize(@helper.errors.count, "error") %> prohibited this reply from being saved:</h4>
+      <ul>
+      <% @helper.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%= form_for([@help, @helper]) do |f| %>
+  <div class="form-group">
+    <%= f.label :reply %><br>
+    <%= f.text_area :reply , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Submit" , class: "btn btn-primary" %>
+  </div>
+<% end %>

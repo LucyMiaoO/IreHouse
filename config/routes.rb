@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  
           mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
           
           devise_for :users
@@ -9,7 +8,9 @@ Rails.application.routes.draw do
             resources :reservations, only:[:new, :create]
             resources :wishlists, only: [:new, :create, :destroy]
           end
-          resources :helps
+          resources :helps do
+            resources :helpers
+          end  
             
           root 'listings#index'
           

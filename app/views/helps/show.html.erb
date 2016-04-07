@@ -1,23 +1,32 @@
-<p>
-  <strong>Title:</strong>
-  <%= @help.title %>
-</p>
 
-<p>
-  <strong>City:</strong>
-  <%= @help.city %>
-</p>
+<div class="row">
+	<div class="col-md-offset-2 col-md-8">
+		<div class="panel panel-default">
+			<div class="panel panel-heading">
+			  <br>	
+			  <h1><%= @help.title %></h1>
+			</div>
+			<div class="panel panel-body">  
+              <h4><%= @help.message %></h4>
+            </div>
+            <div class="panel panel-footer">
+              <h5>Need help in <%= @help.city %> from <%= @help.user.name %></h5>
+            </div>
+        </div>
 
-<p>
-  <strong>Message:</strong>
-  <%= @help.message %>
-</p>
+		<br>
+		<%=link_to new_help_helper_path(@help) , class: "btn btn-circle btn-warning btn-xs", title: "Replies" do %>
+                <i class="fa fa-comments"></i>
+              <% end %>
 
-<% if current_user == @help.user %>
-	<%= link_to edit_help_path(@help) , class: "btn btn-circle btn-info btn-xs", title: "Edit" do %>
-	  <i class="glyphicon glyphicon-edit"></i>
-	<% end %>
-<% end %>	
+		<% if current_user == @help.user %>
+			<%= link_to edit_help_path(@help) , class: "btn btn-circle btn-info btn-xs", title: "Edit" do %>
+			  <i class="glyphicon glyphicon-edit"></i>
+			<% end %>
+		<% end %>	
 
 
-<button class="btn btn-primary btn-circle" title="Back" onclick="javascript:history.back(-1);"><i class="glyphicon glyphicon-chevron-left"></i></button>
+		<button class="btn btn-primary btn-circle" title="Back" onclick="javascript:history.back(-1);"><i class="glyphicon glyphicon-chevron-left"></i></button>
+    </div>
+</div>              
+

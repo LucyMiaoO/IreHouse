@@ -1,0 +1,46 @@
+<h1>Replies</h1>
+
+<div class="row">
+	<div class="col-md-5">
+		<div class="panel panel-default">
+			<div class="panel panel-heading">
+			  <br>	
+			  <h1><%= @helper.help.title %></h1>
+			</div>
+			<div class="panel panel-body">  
+              <h4><%= @helper.help.message %></h4>
+            </div>
+            <div class="panel panel-footer">
+              <h5>Need help in <%= @helper.help.city %> from <%= @helper.help.user.name %></h5>
+            </div>
+        </div>
+        <button class="btn btn-primary btn-circle" title="Back" onclick="javascript:history.back(-1);"><i class="glyphicon glyphicon-chevron-left"></i></button>
+    </div>
+    <br>  
+    <div class="col-md-7">
+    <% if @helpers.blank? %>
+	    <h2>No replies yet.</h2>
+	<% else %>  
+		<% @helpers.each do |helper| %>    
+		    	<div class="panel panel-warning">
+		    		<div class="panel-heading">
+		               <h5> From <%= helper.user.name %> </h5>
+		            </div>
+		            <div class="panel-body">   
+		               <p> <%= helper.reply %> </p>
+		               <p class="button-right"><%= link_to new_help_helper_path(@help), method: :delete, class: "btn btn-circle btn-danger btn-xs", title: "Delete", data: { confirm: "Are you sure?" } do %></li>
+			                <i class="glyphicon glyphicon-remove"></i>
+			              <% end %>
+			            </p>  
+		            </div>
+		        </div>         
+		<% end %>
+	<% end %>	
+	</div> 
+	<br>
+	<br>
+	<div class="col-md-offset-5 col-md-7">
+	<%= render 'form' %>
+    </div>
+</div>
+
