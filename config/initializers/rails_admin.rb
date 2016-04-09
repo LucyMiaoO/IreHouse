@@ -2,7 +2,7 @@ RailsAdmin.config do |config|
 
   config.authenticate_with do
     authenticate_or_request_with_http_basic('Authentication') do |username, password|
-      username == 'admin' && password == ENV["ADMIN_SECRET"]
+      username == 'admin' && password == '80230412'
     end
   end
 
