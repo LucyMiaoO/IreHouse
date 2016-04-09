@@ -1,6 +1,9 @@
         <a href="#menu-toggle" class="btn btn-circle btn-primary btn-xs" id="menu-toggle"><i class="glyphicon glyphicon-th-list"></i></a>
+        <% if user_signed_in? %>
+              <strong> Hi, <%= current_user.name %>!</strong>   
+        <% end %>
         <div class="navbar-right">
-            <% if user_signed_in? %>          
+            <% if user_signed_in? %>        
                         <%= link_to homepage_path , class: "btn btn-circle btn-default btn-xs", title: "Homepage" do %>
                             <i class="fa fa-user fa-fw"></i>
                         <% end %>
@@ -12,6 +15,9 @@
                         <% end %>    
                               
             <% else %>
+                        <%= link_to user_omniauth_authorize_path(:facebook) , class: "btn btn-circle btn-primary btn-xs", title: "Log in with facebook" do %>
+                            <i class="fa fa-facebook-square"></i>
+                        <% end %>
                         <%= link_to new_user_session_path , class: "btn btn-circle btn-warning btn-xs", title: "Log in" do %>
                             <i class="glyphicon glyphicon-log-in"></i>
                         <% end %>

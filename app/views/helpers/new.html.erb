@@ -28,6 +28,7 @@
 		    	<div class="panel panel-warning">
 		    		<div class="panel-heading">
 		               <h5> From <%= helper.user.name %> </h5>
+		               <a href="mailto:<%= helper.user.email %>?subject=I need your house"><%=helper.user.email %></a>
 		            </div>
 		            <div class="panel-body">   
 		               <p> <%= helper.reply %> </p>

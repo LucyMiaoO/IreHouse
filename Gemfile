@@ -21,6 +21,7 @@ source 'https://rubygems.org'
     gem "font-awesome-rails"
     gem 'sunspot_rails'
     gem 'sunspot_solr'
+    gem 'omniauth-facebook'
 
     group :development, :test do
       gem 'sqlite3',     '1.3.9'

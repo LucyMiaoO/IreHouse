@@ -11,7 +11,7 @@
     <% @wishlists.each do |wishlist| %>
     <div class="panel panel-danger">
       <div class="panel-heading">
-        <h4>House in <%= wishlist.listing.city %></h4>
+        <h4>House in <%= link_to wishlist.listing.city, wishlist.listing %></h4>
         <div class="star-rating" data-score= <%= wishlist.rate %> ></div>
       </div>
       <table class="table table-bordered">  
