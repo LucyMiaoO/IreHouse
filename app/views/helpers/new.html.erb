@@ -12,6 +12,9 @@
             </div>
             <div class="panel panel-footer">
               <h5>Need help in <%= @helper.help.city %> from <%= @helper.help.user.name %></h5>
+              <span class="timestamp">
+	            Posted <%= time_ago_in_words(@helper.help.created_at) %> ago.
+	          </span>
             </div>
         </div>
         <button class="btn btn-primary btn-circle" title="Back" onclick="javascript:history.back(-1);"><i class="glyphicon glyphicon-chevron-left"></i></button>
@@ -28,10 +31,9 @@
 		            </div>
 		            <div class="panel-body">   
 		               <p> <%= helper.reply %> </p>
-		               <p class="button-right"><%= link_to new_help_helper_path(@help), method: :delete, class: "btn btn-circle btn-danger btn-xs", title: "Delete", data: { confirm: "Are you sure?" } do %></li>
-			                <i class="glyphicon glyphicon-remove"></i>
-			              <% end %>
-			            </p>  
+		               <span class="timestamp">
+		                 Posted <%= time_ago_in_words(helper.created_at) %> ago.
+		               </span>
 		            </div>
 		        </div>         
 		<% end %>

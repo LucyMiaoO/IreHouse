@@ -9,6 +9,9 @@ Rails.application.routes.draw do
             resources :wishlists, only: [:new, :create, :destroy]
           end
           resources :helps do
+            collection do
+              get :search
+            end  
             resources :helpers
           end  
             

@@ -34,7 +34,7 @@ class HelpersController < ApplicationController
     @help = helper.help
     @helper.destroy
     respond_to do |format|
-      format.html { redirect_to helpers_url, notice: 'Helper was successfully destroyed.' }
+      format.html { redirect_to new_help_helper_path, notice: 'Helper was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

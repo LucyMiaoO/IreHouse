@@ -11,6 +11,9 @@
             </div>
             <div class="panel panel-footer">
               <h5>Need help in <%= @help.city %> from <%= @help.user.name %></h5>
+              <span class="timestamp">
+	            Posted <%= time_ago_in_words(@help.created_at) %> ago.
+	          </span>
             </div>
         </div>
 

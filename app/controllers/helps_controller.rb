@@ -1,8 +1,20 @@
 class HelpsController < ApplicationController
   before_action :set_help, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
     @helps = Help.all
+  end
+
+  def search
+    @helps = Help.search do
+      keywords params[:query]
+    end.results
+
+    respond_to do |format|
+      format.html { render :action => "index" }
+      format.xml  { render :xml => @helps }
+    end
   end
 
   def show
