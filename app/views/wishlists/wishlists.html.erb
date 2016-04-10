@@ -4,14 +4,13 @@
 
 <br>
 <br>
-
 <% if @wishlists.blank? %>
       <h2>No wishlists yet. </h2>
   <% else %>
     <% @wishlists.each do |wishlist| %>
     <div class="panel panel-danger">
       <div class="panel-heading">
-        <h4>House in <%= link_to wishlist.listing.city, wishlist.listing %></h4>
+        <h4>House in <%= wishlist.listing.city %></h4>
         <div class="star-rating" data-score= <%= wishlist.rate %> ></div>
       </div>
       <table class="table table-bordered">  
@@ -23,7 +22,7 @@
       </tr>
       <tr> 
         <th class="center">Address</th>
-        <td class="center"><%= wishlist.listing.address %></td>
+        <td class="center"><%= link_to wishlist.listing.address, wishlist.listing %></td>
       </tr>
       <tr>  
         <th class="center">Deposit</th>
@@ -32,6 +31,10 @@
       <tr>  
         <th class="center">Date wanted</th>
         <td class="center"><%= wishlist.created_at.strftime("%B %-d, %Y") %></td>
+      </tr>
+      <tr>  
+        <th class="center">Contact the landlord</th>
+        <td class="center"><a href="mailto:<%= wishlist.listing.user.email %>?subject=Want to rent your house in <%= wishlist.listing.city %>"><%= wishlist.listing.user.email %></a></td>
       </tr>
     </table>
     </div>
