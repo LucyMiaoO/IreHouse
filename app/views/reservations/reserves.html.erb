@@ -32,8 +32,12 @@
         <th class="center">Landlord</th>
         <td class="center"><%= reservation.landlord.name %></td>
       <tr>  
-        <th class="center">Date rented</th>
+        <th class="center">Date paid</th>
         <td class="center"><%= reservation.created_at.strftime("%B %-d, %Y") %></td>
+      </tr>
+      <tr>
+        <th class="center">Contact the landlord</th>
+        <td class="center"><a href="mailto:<%= reservation.landlord.email %>?subject=Tenant <%= reservation.student.name %> from IreHouse"><%= reservation.landlord.email %></td>
       </tr>  
     </table>
     </div>

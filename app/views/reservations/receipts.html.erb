@@ -16,7 +16,19 @@
       <div class="panel-body">
         <p><%= reservation.message %></p>
       </div>
-      <table class="table table-bordered">  
+      <table class="table table-bordered">
+      <tr>
+        <th class="center">Contact the sudent</th>
+        <td class="center"><a href="mailto:<%= reservation.student.email %>?subject=Landlord <%= reservation.landlord.name %> from IreHouse"><%= reservation.student.email %></td>
+      </tr>  
+      <tr>  
+        <th class="center">Age</th>
+        <td class="center"><%= reservation.age %></td>
+      </tr>
+      <tr>  
+        <th class="center">Nationality</th>
+        <td class="center"><%= reservation.nationality %></td>
+      </tr> 
       <tr>
         <th class="center">Image</th>
         <td class="center">
@@ -36,16 +48,8 @@
         <td class="center"> € <%= reservation.listing.deposit %></td>
       </tr>
       <tr>  
-        <th class="center">Date rented</th>
+        <th class="center">Date paid</th>
         <td class="center"><%= reservation.created_at.strftime("%B %-d, %Y") %></td>
-      </tr>
-      <tr>  
-        <th class="center">Age</th>
-        <td class="center"><%= reservation.age %></td>
-      </tr>
-      <tr>  
-        <th class="center">Nationality</th>
-        <td class="center"><%= reservation.nationality %></td>
       </tr>  
     </table>
     </div>
