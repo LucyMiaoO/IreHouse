@@ -19,7 +19,7 @@
               <%= link_to edit_help_path(help), class: "btn btn-circle btn-info btn-xs", title: "Edit" do %>
                 <i class="glyphicon glyphicon-edit"></i>
               <% end %>
-              <%= link_to help, method: :delete, class: "btn btn-circle btn-danger btn-xs", title: "Delete" do %></li>
+              <%= link_to help, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-circle btn-danger btn-xs", title: "Delete" do %></li>
                 <i class="glyphicon glyphicon-remove"></i>
               <% end %>
           </h3>
