@@ -6,17 +6,6 @@ class HelpsController < ApplicationController
     @helps = Help.all
   end
 
-  def search
-    @helps = Help.search do
-      keywords params[:query]
-    end.results
-
-    respond_to do |format|
-      format.html { render :action => "index" }
-      format.xml  { render :xml => @helps }
-    end
-  end
-
   def show
   end
 

@@ -8,10 +8,7 @@ Rails.application.routes.draw do
             resources :reservations, only:[:new, :create]
             resources :wishlists, only: [:new, :create, :destroy]
           end
-          resources :helps do
-            collection do
-              get :search
-            end  
+          resources :helps do  
             resources :helpers
           end  
             

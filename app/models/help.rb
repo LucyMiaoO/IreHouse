@@ -5,8 +5,4 @@ class Help < ActiveRecord::Base
   
 	validates :title, :city, :message, presence: true
 
-	searchable do
-      text :city
-    end
-
 end
