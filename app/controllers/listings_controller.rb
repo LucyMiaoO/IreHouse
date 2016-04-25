@@ -14,6 +14,12 @@ class ListingsController < ApplicationController
   end
 
   def show
+    @reservations = Reservation.where(listing_id: @listing.id)
+    @wishlists = Wishlist.where(listing_id: @listing.id)
+    @result = false
+    if @reservations.count != 0
+      @result = true
+    end     
   end
 
   def new

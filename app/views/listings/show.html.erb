@@ -3,6 +3,11 @@
     <div class="thumbnail">
       <%= image_tag @listing.image.url %>
     </div>
+    <% if @reservations.count != 0 %>
+    <p>This house is rented!</p>
+    <% else %>
+    <p><%= "#{@wishlists.length} people like this house!" %></p>
+    <% end %>
   </div>
   <div class="col-md-6">
     <h3><%= @listing.city %></h3>
@@ -23,7 +28,7 @@
         <%= link_to new_listing_wishlist_path(@listing), class: "btn btn-circle btn-danger btn-xs", title: "Like" do %>
             <i class="fa fa-heart fa-fw"></i>
           <% end %>     
-        <%= link_to new_listing_reservation_path(@listing), class: "btn btn-circle btn-info btn-xs", title: "Reserve" do %>
+        <%= link_to new_listing_reservation_path(@listing), class: "btn btn-circle btn-info btn-xs", :disabled => @result, title: "Reserve" do %>
             <i class="fa fa-credit-card fa-fw"></i>
           <% end %>
       <% end %>
