@@ -3,7 +3,7 @@ class Listing < ActiveRecord::Base
   belongs_to :user
   belongs_to :group
   has_many :reservations
-  has_many :wishlists
+  has_many :wishlists, dependent: :destroy
   
   if Rails.env.development?
     has_attached_file :image, :styles => { :medium => "200x", :thumb => "100x100>" }, :default_url => "default.jpg"
