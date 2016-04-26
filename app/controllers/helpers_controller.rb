@@ -4,10 +4,10 @@ class HelpersController < ApplicationController
 
   def new
     @helper = Helper.new
-    @helpers = Helper.all.order("created_at DESC")
     @help = Help.find(params[:help_id])
     @helper.help_id = @help.id
     @helper.user_id = current_user.id
+    @helpers = Helper.where(help_id: @help.id)
   end
 
 

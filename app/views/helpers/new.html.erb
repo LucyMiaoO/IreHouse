@@ -24,20 +24,20 @@
     <% if @helpers.blank? %>
 	    <h2>No replies yet.</h2>
 	<% else %>  
-		<% @helpers.each do |helper| %>    
-		    	<div class="panel panel-warning">
-		    		<div class="panel-heading">
-		               <h5> From <%= helper.user.name %> </h5>
-		               <a href="mailto:<%= helper.user.email %>?subject=I need your house"><%=helper.user.email %></a>
-		            </div>
-		            <div class="panel-body">   
-		               <p> <%= helper.reply %> </p>
-		               <span class="timestamp">
-		                 Posted <%= time_ago_in_words(helper.created_at) %> ago.
-		               </span>
-		            </div>
-		        </div>         
-		<% end %>
+			<% @helpers.each do |helper| %>    
+			    	<div class="panel panel-warning">
+			    		<div class="panel-heading">
+			               <h5> From <%= helper.user.name %> </h5>
+			               <a href="mailto:<%= helper.user.email %>?subject=I need your house"><%=helper.user.email %></a>
+			            </div>
+			            <div class="panel-body">   
+			               <p> <%= helper.reply %> </p>
+			               <span class="timestamp">
+			                 Posted <%= time_ago_in_words(helper.created_at) %> ago.
+			               </span>
+			            </div>
+			        </div>         
+			<% end %>
 	<% end %>	
 	</div> 
 	<br>
