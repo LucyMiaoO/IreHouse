@@ -43,7 +43,7 @@ Click on the email address of the landlord, a draft email with specific object w
 
 When you fill in the reservation form, you just need a credit card to pay for the deposit. Meanwhile, you can also leave a message to the landlord if you want. After that, you will receive a reservation history, which you can check it in your homepage.
 
-![image](https://github.com/LucyMiaoO/IreHouse/blob/master/app/assets/images/img/010.png)
+![image](https://github.com/LucyMiaoO/IreHouse/blob/master/app/assets/images/img/10.png)
 
 At the same time, the landlord can receive the receipt with the detail personal information of the tenant on it. As I mentioned before, the landlord can also click on the email address of the tenant to contact him or her. In addition, the landlord can click on the address and view the house information as well.
 
